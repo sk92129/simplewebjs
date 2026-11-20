@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <section class="card" id="form-panel">
+      <h1>User Registration</h1>
+      <p class="lede">Enter your details to register. All fields are required.</p>
+
+      <form id="register" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal details</legend>
+          <div class="grid">
+            <label>
+              First name
+              <input name="firstName" autocomplete="given-name" required maxlength="60">
+            </label>
+            <label>
+              Last name
+              <input name="lastName" autocomplete="family-name" required maxlength="60">
+            </label>
+            <label>
+              Date of birth
+              <input name="dob" type="date" autocomplete="bday" required>
+            </label>
+            <label>
+              Email address
+              <input name="email" type="email" autocomplete="email" required maxlength="120" placeholder="you@example.com">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Phone</legend>
+          <div class="phone">
+            <label>
+              Country code
+              <select name="phoneCode" autocomplete="tel-country-code" required>
+                <option value="" selected disabled>Select code</option>
+              </select>
+            </label>
+            <label>
+              Phone number
+              <input name="phone" type="tel" autocomplete="tel-national" required inputmode="tel" maxlength="20" placeholder="555 010 0142" pattern="[0-9()+\-\s]{6,20}" title="Enter 6 to 20 digits. Spaces, parentheses, and dashes are allowed.">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Address</legend>
+          <div class="grid">
+            <label class="span-2">
+              Street address
+              <input name="street" autocomplete="address-line1" required maxlength="120" placeholder="123 Market Street">
+            </label>
+            <label>
+              City
+              <input name="city" autocomplete="address-level2" required maxlength="80">
+            </label>
+            <label>
+              State or province
+              <input name="region" autocomplete="address-level1" required maxlength="80">
+            </label>
+            <label>
+              Postal code
+              <input name="postal" autocomplete="postal-code" required maxlength="16">
+            </label>
+            <label>
+              Country
+              <select name="country" autocomplete="country" required>
+                <option value="" selected disabled>Select country</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit">Create account</button>
+        <p class="note">This page only checks the form in your browser. Nothing is sent to a server.</p>
+      </form>
+    </section>
+
+    <section class="card success" id="success" aria-live="polite">
+      <h2>Registration received</h2>
+      <p>These details were checked locally and were not stored.</p>
+      <dl id="summary"></dl>
+    </section>
+  </main>
+
+  <script src="form.js"></script>
+</body>
+</html>
